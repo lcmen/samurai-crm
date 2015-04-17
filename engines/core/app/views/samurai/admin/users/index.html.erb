@@ -1,0 +1,29 @@
+<h2 class='pull-left'>Users</h2>
+
+<%= render 'admin/shared/nav' %>
+
+<hr>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    All Users
+  </div>
+  <table class="table">
+    <thead>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Signed Up</th>
+      <th>Admin?</th>
+    </thead>
+    <tbody>
+      <%- @users.ordered.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.email %></td>
+          <td><%= user.created_at.strftime("%d %b. %Y") %></td>
+          <td><%= user.admin? %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
