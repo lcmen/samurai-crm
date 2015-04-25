@@ -2,10 +2,11 @@
   <li role="presentation" class="<%= active(samurai.admin_path) %>">
     <%= link_to 'Dashboard', samurai.admin_path %>
   </li>
-  <li role="presentation" class="<%= active(samurai.admin_users_path) %>">
+  <li role="presentation" class="<%= active(samurai.admin_users_path) %>"
+    data-samurai-hook="admin_nav">
     <%= link_to samurai.admin_users_path do %>
       Users <span class="badge"><%= Samurai::User.count %></span>
     <% end %>
- </li>
+  </li>
 </ul>
 <div class='clearfix'></div>

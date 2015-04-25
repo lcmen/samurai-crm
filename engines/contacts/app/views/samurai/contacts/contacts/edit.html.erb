@@ -1,0 +1,14 @@
+<h2>Editing Contact</h2>
+
+<hr>
+
+<%= form_for([samurai, @contact]) do |f| %>
+  <%= render 'form', f: f %>
+
+  <div class="form-group">
+    <div>
+      <%= f.submit "Update Contact", class: "btn btn-primary" %>
+      <%= link_to 'Back', samurai.contacts_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

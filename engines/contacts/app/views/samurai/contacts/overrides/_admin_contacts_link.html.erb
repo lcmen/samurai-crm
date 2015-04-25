@@ -1,0 +1,5 @@
+<li role="presentation" class="<%= active(samurai.admin_contacts_path) %>">
+  <%= link_to samurai.admin_contacts_path do %>
+    Contacts <span class="badge"><%= Samurai::Contacts::Contact.count %></span>
+  <% end %>
+</li>
