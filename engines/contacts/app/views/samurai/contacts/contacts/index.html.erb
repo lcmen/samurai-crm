@@ -1,0 +1,42 @@
+<%= link_to 'New Contact', samurai.new_contact_path, class: 'pull-right btn btn-primary' %>
+
+<h2>Listing Contacts</h2>
+
+<hr>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    My Contacts
+  </div>
+  <table class="table">
+    <thead>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Company</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= contact.id %></td>
+          <td><%= contact.first_name %></td>
+          <td><%= contact.last_name %></td>
+          <td><%= contact.company %></td>
+          <td><%= contact.email %></td>
+          <td><%= contact.phone %></td>
+          <td>
+            <%= link_to 'Show', [samurai, contact], class: 'btn btn-primary' %>
+            <%= link_to 'Edit', samurai.edit_contact_path(contact), class: 'btn btn-primary' %>
+            <%= link_to 'Destroy', [samurai, contact], class: 'btn btn-primary', method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>

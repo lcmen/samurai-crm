@@ -16,7 +16,7 @@
       <%- if current_user %>
         <div class="navbar-collapse collapse" id="navbar">
           <ul class="nav navbar-nav">
-            <li class="<%= active(samurai.root_path) %>">
+            <li data-samurai-hook='main_nav' class="<%= active(samurai.root_path) %>">
               <%= link_to 'Home', samurai.root_path %>
             </li>
             <li class="<%= active(samurai.edit_user_registration_path) %>">

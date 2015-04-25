@@ -1,0 +1,18 @@
+<h2><%= @contact.first_name %></h2>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-8">
+    <strong>First Name:</strong> <%= @contact.first_name %><br/>
+    <strong>Last Name:</strong> <%= @contact.last_name %><br/>
+    <strong>Company:</strong> <%= @contact.company %><br/>
+    <strong>Email:</strong> <%= @contact.email %><br/>
+    <strong>Phone:</strong> <%= @contact.phone %>
+  </div>
+</div>
+
+<hr>
+
+<%= link_to 'Edit', samurai.edit_contact_path(@contact), class: "btn btn-primary" %>
+<%= link_to 'Back', samurai.contacts_path, class: 'btn btn-default' %>

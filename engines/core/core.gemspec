@@ -7,8 +7,14 @@ require "samurai/core/version"
 Gem::Specification.new do |s|
   s.name        = "samurai_core"
   s.version     = Samurai::Core::VERSION
-  s.authors     = ["Lucas Mendelowski"]
-  s.email       = ["mendelowski@gmail.com"]
+  s.authors     = [
+                    "Thibault Denizet",
+                    "Lucas Mendelowski"
+                  ]
+  s.email       = [
+                    "bo@samurails.com",
+                    "mendelowski@gmail.com"
+                  ]
   s.homepage    = "http://samurails.com"
   s.summary     = "Core features of SamuraiCRM."
   s.description = "Core features of SamuraiCRM."

@@ -9,7 +9,7 @@ module Samurai
 
     def active(path, comparator = :absolute)
       if comparator == :inclusion
-        /#{path}/ =~ request.path ? 'active' : ''
+        /^#{path}/ =~ request.path ? 'active' : ''
       else
         current_page?(path) ? 'active' : ''
       end
