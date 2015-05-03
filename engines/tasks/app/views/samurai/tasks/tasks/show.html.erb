@@ -1,0 +1,15 @@
+<h2><%= @task.title %></h2>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-8">
+    <strong>Title:</strong> <%= @task.title %><br/>
+    <strong>Content:</strong> <%= @task.content %><br/>
+    <strong>User:</strong> <%= @task.user.email %> <br/>
+  </div>
+</div>
+<hr>
+
+<%= link_to 'Edit', samurai.edit_task_path(@task), class: "btn btn-primary" %>
+<%= link_to 'Back', samurai.tasks_path, class: 'btn btn-default' %>

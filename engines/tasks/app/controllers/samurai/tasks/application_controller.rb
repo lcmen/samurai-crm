@@ -1,5 +1,5 @@
 module Samurai
-  module Contacts
+  module Tasks
     class ApplicationController < Samurai::ApplicationController
     end
   end
