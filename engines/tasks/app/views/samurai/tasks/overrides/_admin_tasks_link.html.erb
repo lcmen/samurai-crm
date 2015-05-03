@@ -1,0 +1,5 @@
+<li role="presentation" class="<%= active(samurai.admin_tasks_path) %>">
+  <%= link_to samurai.admin_tasks_path do %>
+    Tasks <span class="badge"><%= Samurai::Tasks::Task.count %></span>
+  <% end %>
+</li>

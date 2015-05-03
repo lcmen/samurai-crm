@@ -1,0 +1,38 @@
+<%= link_to 'New Task', samurai.new_task_path, class: 'pull-right btn btn-primary' %>
+
+<h2>Listing Task</h2>
+
+<hr>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    My Tasks
+  </div>
+  <table class="table">
+    <thead>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Created At</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td><%= task.id %></td>
+          <td><%= task.title %></td>
+          <td><%= task.content %></td>
+          <td><%= task.created_at.strftime("%d %b. %Y") %></td>
+          <td>
+            <%= link_to 'Show', [samurai, task], class: 'btn btn-primary' %>
+            <%= link_to 'Edit', samurai.edit_task_path(task), class: 'btn btn-primary' %>
+            <%= link_to 'Destroy', [samurai, task], class: 'btn btn-primary',
+              method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>

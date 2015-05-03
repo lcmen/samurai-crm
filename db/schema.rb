@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418125605) do
+ActiveRecord::Schema.define(version: 20150503103049) do
 
   create_table "samurai_contacts_contacts", force: :cascade do |t|
     t.string   "first_name"
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20150418125605) do
   end
 
   add_index "samurai_contacts_contacts", ["user_id"], name: "index_samurai_contacts_contacts_on_user_id"
+
+  create_table "samurai_tasks_tasks", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "contact_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "samurai_tasks_tasks", ["contact_id"], name: "index_samurai_tasks_tasks_on_contact_id"
+  add_index "samurai_tasks_tasks", ["user_id"], name: "index_samurai_tasks_tasks_on_user_id"
 
   create_table "samurai_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
